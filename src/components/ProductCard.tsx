@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { Product, SingleProduct } from "../types/product";
+import {Link} from "react-router-dom";
+import {Product, SingleProduct} from "../types/product";
+import {AddToCart} from "./AddToCart";
 
 interface ProductCardProps {
     product: Product;
@@ -9,7 +10,7 @@ interface SingleProductCardProps {
     product: SingleProduct;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({product}: ProductCardProps) {
     return (
         <div key={product.id} className="p-4 border">
             <h3 className="text-lg font-bold">{product.title}</h3>
@@ -34,7 +35,7 @@ export function ProductCard({ product }: ProductCardProps) {
     );
 }
 
-export function SingleProductCard({ product }: SingleProductCardProps) {
+export function SingleProductCard({product}: SingleProductCardProps) {
     return (
         <div className="container mx-auto px-4 py-6">
             <h2 className="text-2xl font-bold mb-4">{product.title}</h2>
@@ -51,6 +52,9 @@ export function SingleProductCard({ product }: SingleProductCardProps) {
             ) : (
                 <p>Price: ${product.price}</p>
             )}
+
+            <AddToCart product={product}/>
+
             <p className="text-sm text-gray-500">Rating: {product.rating} ⭐</p>
 
             <div>
