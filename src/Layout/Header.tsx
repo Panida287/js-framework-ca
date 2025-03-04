@@ -1,6 +1,9 @@
 import {NavLink} from "react-router-dom";
+import {useCartStore} from "../store/cartStore";
 
 export default function Header() {
+    const {cart} = useCartStore();
+    const cartCount = cart.length;
     return (
         <>
             <header className="bg-gray-900 text-gray-400">
@@ -44,9 +47,12 @@ export default function Header() {
                             >
                                 Cart
                             </NavLink>
-                            <span className="absolute bg-gray-400 rounded-full text-gray-900 px-1 -translate-y-1 text-xs ">
-                            0
-                        </span>
+                            {cartCount > 0 && (
+                                <span
+                                    className="absolute flex items-center justify-center bg-gray-400 rounded-full text-gray-900 h-4 w-4 -translate-y-7 translate-x-8 text-xs">
+                                {cartCount}
+                                </span>
+                            )}
                         </li>
                     </ul>
                 </nav>
