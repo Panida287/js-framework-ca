@@ -26,10 +26,10 @@ export function ProductCard({product}: ProductCardProps) {
                 {product.description}
             </p>
             {product.discountedPrice !== product.price ? (
-                <p className="flex flex-col justify-start w-full p-3">
+                <span className="flex flex-col justify-start w-full p-3">
                     <p>Price: <del className="text-red-700">${product.price}</del></p>
                     <p>Discounted: ${product.discountedPrice}</p>
-                </p>
+                </span>
             ) : (
                 <p className="flex justify-start p-3 w-full">Price: ${product.price}</p>
             )}
