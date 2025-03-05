@@ -5,7 +5,6 @@ import Layout from "./Layout"
 import ProductPage from "./routes/ProductPage";
 import CheckoutPage from "./routes/CheckoutPage";
 import CheckoutSuccessPage from "./routes/CheckoutSuccessPage";
-import CartPage from "./routes/CartPage";
 import ContactPage from "./routes/ContactPage";
 import "./index.css";
 import App from "./App";
@@ -24,18 +23,12 @@ const router = createBrowserRouter([
                 element: <ProductPage />
             },
             {
-                path: "cart",
-                element: <CartPage />
-            },
-            {
                 path: "checkout",
                 element: <CheckoutPage />,
-                children: [
-                    {
-                        path: "success",
-                        element: <CheckoutSuccessPage />
-                    }
-                ]
+            },
+            {
+                path: "checkout/success",
+                element: <CheckoutSuccessPage />
             },
             {
                 path: "contact",

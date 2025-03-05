@@ -1,7 +1,7 @@
 export default function CheckoutSuccessPage() {
     return (
-        <div>
-            <h1>Checkout Success Page</h1>
+        <div className="flex justify-center items-center h-full">
+            <h1>Checkout Successful!</h1>
         </div>
     );
 }
