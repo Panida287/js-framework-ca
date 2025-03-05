@@ -1,6 +1,6 @@
 import {useCartStore} from "../store/cartStore";
 import {Link} from "react-router-dom";
-
+import {Button} from "./Button";
 
 function CartTotal() {
     const {cart} = useCartStore();
@@ -44,12 +44,7 @@ export function CartItems() {
                                 ) : (
                                     <p>Price: ${product.price}</p>
                                 )}
-                                <button
-                                    onClick={() => removeFromCart(product.id)}
-                                    className="px-4 py-2 rounded bg-red-600 text-white"
-                                >
-                                    Remove from cart
-                                </button>
+                                <Button text="Remove" onClick={() => removeFromCart(product.id)} variant="danger" />
                             </div>
                         ))}
                         <CartTotal/>
