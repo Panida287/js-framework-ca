@@ -23,7 +23,7 @@ export function ProductCard({product}: ProductCardProps) {
                 />
             </Link>
             <p>Description: {product.description}</p>
-            {product.discountedPrice ? (
+            {product.discountedPrice !== product.price ? (
                 <p>
                     Price: <del>${product.price}</del> Discounted: ${product.discountedPrice}
                 </p>
@@ -45,7 +45,7 @@ export function SingleProductCard({product}: SingleProductCardProps) {
                 alt={product.image?.alt || product.title}
                 className="w-full max-w-md object-cover rounded-md"
             />
-            {product.discountedPrice ? (
+            {product.discountedPrice !== product.price ? (
                 <p>
                     Price: <del>${product.price}</del> Discounted: ${product.discountedPrice}
                 </p>
