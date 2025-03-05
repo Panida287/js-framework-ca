@@ -31,6 +31,7 @@ export function ProductCard({product}: ProductCardProps) {
                 <p>Price: ${product.price}</p>
             )}
             <p>Rating: {product.rating} ⭐</p>
+            <AddToCart product={product} />
         </div>
     );
 }
