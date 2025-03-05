@@ -14,8 +14,17 @@ export function AddToCart({product}: AddToCartProps) {
     return (
         <Button
             text={isInCart ? "Remove from Cart" : "Add to Cart"}
-            onClick={() => (isInCart ? removeFromCart(product.id) : addToCart(product))}
+            onClick={() => {
+                if (isInCart) {
+                    removeFromCart(product.id);
+                    alert(`${product.title} removed from cart`);
+                } else {
+                    addToCart(product);
+                    alert(`${product.title} added to cart`);
+                }
+            }}
             variant={isInCart ? "danger" : "primary"}
         />
-    )
+    );
+
 }

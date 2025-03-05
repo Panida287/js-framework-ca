@@ -30,9 +30,10 @@ export function SearchBar({setResults}: SearchBarProps) {
     };
 
     return (
-        <div className="">
+        <div className="flex justify-center items-center gap-4 m-4">
             <FaSearch id="search-icon"/>
             <input
+                className="border rounded p-2"
                 type="text"
                 placeholder="Type to search..."
                 value={input}

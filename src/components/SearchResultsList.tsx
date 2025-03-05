@@ -7,7 +7,7 @@ interface SearchResultsListProps {
 
 export function SearchResultsList({results}: SearchResultsListProps) {
     return (
-        <div className="absolute flex flex-col z-10 bg-white">
+        <div className="flex flex-col bg-white p-2 mx-auto items-center border border-gray-200 rounded">
             {results.map((result) => (
                 <SearchResult result={result} key={result.id}/>
             ))}

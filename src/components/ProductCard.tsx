@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {Product, SingleProduct} from "../types/product";
 import {AddToCart} from "./AddToCart";
+import {BackToShopBtn} from "./Button";
 
 interface ProductCardProps {
     product: Product;
@@ -12,53 +13,63 @@ interface SingleProductCardProps {
 
 export function ProductCard({product}: ProductCardProps) {
     return (
-        <div key={product.id} className="p-4 border">
+        <div key={product.id} className="p-4 border flex flex-col items-center">
             <h3 className="text-lg font-bold">{product.title}</h3>
             <Link to={`/product/${product.id}`}>
                 <img
-                    height="200"
                     src={product.image.url}
                     alt={product.image?.alt || product.title}
-                    className="object-cover"
+                    className="object-cover w-80 h-80"
                 />
             </Link>
-            <p>Description: {product.description}</p>
+            <p className="justify-start indent-4 p-3">
+                {product.description}
+            </p>
             {product.discountedPrice !== product.price ? (
-                <p>
-                    Price: <del>${product.price}</del> Discounted: ${product.discountedPrice}
+                <p className="flex flex-col justify-start w-full p-3">
+                    <p>Price: <del className="text-red-700">${product.price}</del></p>
+                    <p>Discounted: ${product.discountedPrice}</p>
                 </p>
             ) : (
-                <p>Price: ${product.price}</p>
+                <p className="flex justify-start p-3 w-full">Price: ${product.price}</p>
             )}
-            <p>Rating: {product.rating} ⭐</p>
-            <AddToCart product={product} />
+            <p className="flex justify-start w-full p-3 mb-4">Rating: {product.rating} ⭐</p>
+            <AddToCart product={product}/>
         </div>
     );
 }
 
 export function SingleProductCard({product}: SingleProductCardProps) {
     return (
-        <div className="container mx-auto px-4 py-6">
+        <div className="flex flex-col items-center mx-auto px-4 py-6">
             <h2 className="text-2xl font-bold mb-4">{product.title}</h2>
-            <p className="mb-2">{product.description}</p>
+
             <img
                 src={product.image?.url}
                 alt={product.image?.alt || product.title}
-                className="w-full max-w-md object-cover rounded-md"
+                className="object-cover rounded-md h-80 w-80"
             />
+
+            <p className="mb-2 w-[80%] mx-auto m-4 indent-4">{product.description}</p>
+
             {product.discountedPrice !== product.price ? (
-                <p>
-                    Price: <del>${product.price}</del> Discounted: ${product.discountedPrice}
+                <p className="flex flex-col justify-start w-full p-3">
+                    <p>Price: <del className="text-red-700">${product.price}</del></p>
+                    <p>Discounted: ${product.discountedPrice}</p>
                 </p>
             ) : (
-                <p>Price: ${product.price}</p>
+                <p className="flex justify-start p-3 w-full">Price: ${product.price}</p>
             )}
 
+            <p className="text-sm text-gray-500 m-4">Rating: {product.rating} ⭐</p>
+
+            <div className="flex justify-between w-full p-3">
             <AddToCart product={product}/>
+            <BackToShopBtn />
+            </div>
 
-            <p className="text-sm text-gray-500">Rating: {product.rating} ⭐</p>
 
-            <div>
+            <div className="flex flex-col justify-end w-full p-3 border-t border-gray-300 mt-4">
                 <h4 className="font-bold mb-2">Reviews</h4>
                 {product.reviews && product.reviews.length > 0 ? (
                     product.reviews.map((review) => (
