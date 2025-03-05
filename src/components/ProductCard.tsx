@@ -13,7 +13,7 @@ interface SingleProductCardProps {
 
 export function ProductCard({product}: ProductCardProps) {
     return (
-        <div key={product.id} className="p-4 border flex flex-col items-center">
+        <div key={product.id} className="p-4 border flex flex-col items-center justify-between">
             <h3 className="text-lg font-bold">{product.title}</h3>
             <Link to={`/product/${product.id}`}>
                 <img
