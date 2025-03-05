@@ -26,7 +26,7 @@ export default function CartPage() {
                                 />
                             </Link>
                             <h3 className="text-lg font-bold">{product.title}</h3>
-                            {product.discountedPrice ? (
+                            {product.discountedPrice !== product.price ? (
                                 <p>
                                     Price: <del>${product.price}</del> ${product.discountedPrice}
                                 </p>
