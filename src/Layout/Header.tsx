@@ -36,7 +36,7 @@ export default function Header() {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/cart"
+                            <NavLink to="/checkout"
                                      className={({isActive}) =>
                                          `transition-all ${
                                              isActive
