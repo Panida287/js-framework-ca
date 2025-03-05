@@ -19,14 +19,16 @@ export default function App() {
 
     return (
         <>
-            <div className="">
+            <div className="flex justify-center items-center">
                 <SearchBar setResults={setSearchResults}/>
+            </div>
+            <div className="flex w-full justify-center">
                 {searchResults.length > 0 && <SearchResultsList results={searchResults}/>}
             </div>
 
-            <h2 className="text-2xl font-bold mb-4">All Products</h2>
+            <h2 className="text-2xl font-bold mb-4 flex justify-center items-center">All Products</h2>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid gap-4 w-[90%] mx-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {searchResults.length > 0
                     ? searchResults.map((product) => (
                         <ProductCard key={product.id} product={product}/>

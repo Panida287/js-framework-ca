@@ -14,13 +14,13 @@ export default function CartPage() {
     }
     return (
         <>
-            <h1 className="flex justify-center items-center font-bold text-xl text-gray-800 leading-tight mb-4">
+            <h1 className="flex justify-center items-center font-bold text-xl text-gray-800 leading-tight m-4">
                 Checkout
             </h1>
             <CartItems/>
             {cart.length > 0 ?
                 (
-                    <div className=" flex justify-between max-w-4xl mx-auto p-6">
+                    <div className="flex justify-between max-w-4xl mx-auto p-6">
                         <Button text="Clear cart" onClick={clearCart} variant="danger"/>
                         <Button text="Check Out" onClick={handleCheckout} variant="secondary"/>
                     </div>

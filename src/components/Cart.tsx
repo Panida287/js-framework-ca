@@ -28,18 +28,19 @@ export function CartItems() {
                 ) : (
                     <>
                         {cart.map((product) => (
-                            <div key={product.id} className="flex justify-between items-center p-4 border mb-2">
+                            <div key={product.id} className="flex flex-col justify-between items-center p-4 border mb-2 gap-4 md:flex-row">
                                 <Link to={`/product/${product.id}`}>
                                     <img
                                         src={product.image.url}
                                         alt={product.image?.alt || product.title}
-                                        className="object-cover h-20"
+                                        className="object-cover h-20 w-20"
                                     />
                                 </Link>
                                 <h3 className="text-lg font-bold">{product.title}</h3>
                                 {product.discountedPrice !== product.price ? (
-                                    <p>
-                                        Price: <del>${product.price}</del> ${product.discountedPrice}
+                                    <p className="">
+                                        <p>Price: <del className="text-red-700">${product.price}</del></p>
+                                        <p>Discounted: ${product.discountedPrice}</p>
                                     </p>
                                 ) : (
                                     <p>Price: ${product.price}</p>

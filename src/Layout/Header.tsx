@@ -14,8 +14,8 @@ export default function Header() {
                                      className={({isActive}) =>
                                          `transition-all ${
                                              isActive
-                                                 ? "font-bold"
-                                                 : "hover:font-bold"
+                                                 ? "text-white"
+                                                 : "hover:text-white"
                                          }`
                                      }
                             >
@@ -27,8 +27,8 @@ export default function Header() {
                                      className={({isActive}) =>
                                          `transition-all ${
                                              isActive
-                                                 ? "font-bold"
-                                                 : "hover:font-bold"
+                                                 ? "text-white"
+                                                 : "hover:text-white"
                                          }`
                                      }
                             >
@@ -40,8 +40,8 @@ export default function Header() {
                                      className={({isActive}) =>
                                          `transition-all ${
                                              isActive
-                                                 ? "font-bold"
-                                                 : "hover:font-bold"
+                                                 ? "text-white"
+                                                 : "hover:text-white"
                                          }`
                                      }
                             >
