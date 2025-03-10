@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {Button} from "./Button";
 
 export function CartTotal() {
-    const { cart } = useCartStore();
+    const {cart} = useCartStore();
 
     const totalPrice = cart.reduce((acc, product) =>
         acc + (product.discountedPrice ? product.discountedPrice : product.price) * product.quantity, 0
@@ -18,7 +18,7 @@ export function CartTotal() {
 }
 
 export function CartItems() {
-    const { cart, removeFromCart, incrementCart, decrementCart } = useCartStore();
+    const {cart, removeFromCart, incrementCart, decrementCart} = useCartStore();
 
     return (
         <div className="max-w-4xl mx-auto p-6">
@@ -29,7 +29,8 @@ export function CartItems() {
             ) : (
                 <>
                     {cart.map((product) => (
-                        <div key={product.id} className="flex flex-col md:flex-row justify-between items-center p-4 border mb-2 gap-4">
+                        <div key={product.id}
+                             className="flex flex-col md:flex-row justify-between items-center p-4 border mb-2 gap-4">
                             <Link to={`/product/${product.id}`}>
                                 <img
                                     src={product.image.url}
@@ -66,7 +67,7 @@ export function CartItems() {
                                 )}
                             </div>
 
-                            <Button text="Remove" onClick={() => removeFromCart(product.id)} variant="danger" />
+                            <Button text="Remove" onClick={() => removeFromCart(product.id)} variant="danger"/>
                         </div>
                     ))}
                 </>

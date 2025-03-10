@@ -26,46 +26,46 @@ export const useCartStore = create<CartState>((set) => ({
 
         if (existingItem) {
             updatedCart = state.cart.map((item) =>
-                item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+                item.id === product.id ? {...item, quantity: item.quantity + 1} : item
             );
         } else {
-            updatedCart = [...state.cart, { ...product, quantity: 1 }];
+            updatedCart = [...state.cart, {...product, quantity: 1}];
         }
 
         localStorage.setItem(CART_STORE_KEY, JSON.stringify(updatedCart));
-        return { cart: updatedCart };
+        return {cart: updatedCart};
     }),
 
     removeFromCart: (productId) => set((state) => {
         const updatedCart = state.cart.filter((item) => item.id !== productId);
         localStorage.setItem(CART_STORE_KEY, JSON.stringify(updatedCart));
-        return { cart: updatedCart };
+        return {cart: updatedCart};
     }),
 
     incrementCart: (productId) => set((state) => {
         const updatedCart = state.cart.map((item) =>
-            item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+            item.id === productId ? {...item, quantity: item.quantity + 1} : item
         );
 
         localStorage.setItem(CART_STORE_KEY, JSON.stringify(updatedCart));
-        return { cart: updatedCart };
+        return {cart: updatedCart};
     }),
 
     decrementCart: (productId) => set((state) => {
         const updatedCart = state.cart
             .map((item) =>
                 item.id === productId && item.quantity > 1
-                    ? { ...item, quantity: item.quantity - 1 }
+                    ? {...item, quantity: item.quantity - 1}
                     : item
             )
             .filter((item) => item.quantity > 0);
 
         localStorage.setItem(CART_STORE_KEY, JSON.stringify(updatedCart));
-        return { cart: updatedCart };
+        return {cart: updatedCart};
     }),
 
     clearCart: () => {
         localStorage.removeItem(CART_STORE_KEY);
-        set({ cart: [] });
+        set({cart: []});
     },
 }));

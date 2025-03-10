@@ -1,12 +1,12 @@
-import { useForm } from "react-hook-form";
-import { Contact } from "../types/contact";
+import {useForm} from "react-hook-form";
+import {Contact} from "../types/contact";
 
 export function ContactForm() {
     const {
         register,
         handleSubmit,
         reset,
-        formState: { errors },
+        formState: {errors},
     } = useForm<Contact>();
 
     return (
@@ -38,8 +38,8 @@ export function ContactForm() {
                             type="text"
                             {...register("name", {
                                 required: "Name is required",
-                                minLength: { value: 3, message: "Must be at least 3 characters" },
-                                maxLength: { value: 50, message: "Cannot exceed 50 characters" },
+                                minLength: {value: 3, message: "Must be at least 3 characters"},
+                                maxLength: {value: 50, message: "Cannot exceed 50 characters"},
                             })}
                         />
                         {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
@@ -53,8 +53,8 @@ export function ContactForm() {
                             type="text"
                             {...register("lastName", {
                                 required: "Last Name is required",
-                                minLength: { value: 3, message: "Must be at least 3 characters" },
-                                maxLength: { value: 50, message: "Cannot exceed 50 characters" },
+                                minLength: {value: 3, message: "Must be at least 3 characters"},
+                                maxLength: {value: 50, message: "Cannot exceed 50 characters"},
                             })}
                         />
                         {errors.lastName && <span className="text-red-500 text-sm">{errors.lastName.message}</span>}
@@ -85,8 +85,8 @@ export function ContactForm() {
                             type="text"
                             {...register("subject", {
                                 required: "Subject is required",
-                                minLength: { value: 3, message: "Must be at least 3 characters" },
-                                maxLength: { value: 50, message: "Cannot exceed 50 characters" },
+                                minLength: {value: 3, message: "Must be at least 3 characters"},
+                                maxLength: {value: 50, message: "Cannot exceed 50 characters"},
                             })}
                         />
                         {errors.subject && <span className="text-red-500 text-sm">{errors.subject.message}</span>}
@@ -99,8 +99,8 @@ export function ContactForm() {
                             id="body"
                             {...register("body", {
                                 required: "Message is required",
-                                minLength: { value: 3, message: "Must be at least 3 characters" },
-                                maxLength: { value: 1000, message: "Cannot exceed 1000 characters" },
+                                minLength: {value: 3, message: "Must be at least 3 characters"},
+                                maxLength: {value: 1000, message: "Cannot exceed 1000 characters"},
                             })}
                         />
                         {errors.body && <span className="text-red-500 text-sm">{errors.body.message}</span>}

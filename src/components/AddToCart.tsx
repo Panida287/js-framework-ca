@@ -1,13 +1,13 @@
-import { useCartStore } from "../store/cartStore";
-import { Product } from "../types/product";
-import { Button } from "./Button";
+import {useCartStore} from "../store/cartStore";
+import {Product} from "../types/product";
+import {Button} from "./Button";
 
 interface AddToCartProps {
     product: Product;
 }
 
-export function AddToCart({ product }: AddToCartProps) {
-    const { addToCart, removeFromCart, incrementCart, decrementCart, cart } = useCartStore();
+export function AddToCart({product}: AddToCartProps) {
+    const {addToCart, removeFromCart, incrementCart, decrementCart, cart} = useCartStore();
 
     const cartItem = cart.find((item) => item.id === product.id);
     const isInCart = !!cartItem;
