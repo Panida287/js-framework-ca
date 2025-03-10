@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function CheckoutSuccess() {
     const navigate = useNavigate();
@@ -10,9 +10,9 @@ export default function CheckoutSuccess() {
         if (!checkoutComplete) {
             navigate("/");
         } else {
-            setTimeout(()=> {
+            setTimeout(() => {
                 localStorage.removeItem("checkoutComplete");
-            }, 100)
+            }, 100);
         }
     }, [navigate]);
 

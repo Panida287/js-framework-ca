@@ -30,5 +30,5 @@ export function BackToShopBtn() {
     const navigate = useNavigate();
     return (
         <Button text="Back to Shop" onClick={() => navigate("/")} variant="primary"/>
-    )
+    );
 }

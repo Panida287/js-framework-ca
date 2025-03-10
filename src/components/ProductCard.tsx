@@ -64,8 +64,8 @@ export function SingleProductCard({product}: SingleProductCardProps) {
             <p className="text-sm text-gray-500 m-4">Rating: {product.rating} ⭐</p>
 
             <div className="flex justify-between w-full p-3">
-            <AddToCart product={product}/>
-            <BackToShopBtn />
+                <AddToCart product={product}/>
+                <BackToShopBtn/>
             </div>
 
 
