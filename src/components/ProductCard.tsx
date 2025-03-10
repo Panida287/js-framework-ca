@@ -41,7 +41,7 @@ export function ProductCard({product}: ProductCardProps) {
 
 export function SingleProductCard({product}: SingleProductCardProps) {
     return (
-        <div className="flex flex-col items-center mx-auto px-4 py-6">
+        <div className="flex flex-col max-w-[700px] items-center mx-auto px-4 py-6">
             <h2 className="text-2xl font-bold mb-4">{product.title}</h2>
 
             <img
