@@ -18,5 +18,4 @@ export default function ProductPage() {
     if (loading) return <Loading/>;
     if (error) return <ErrorMessage message={error}/>;
     return product ? <SingleProductCard product={product}/> : null;
-
 }

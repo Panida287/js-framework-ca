@@ -17,10 +17,8 @@ export function AddToCart({product}: AddToCartProps) {
             onClick={() => {
                 if (isInCart) {
                     removeFromCart(product.id);
-                    alert(`${product.title} removed from cart`);
                 } else {
                     addToCart(product);
-                    alert(`${product.title} added to cart`);
                 }
             }}
             variant={isInCart ? "danger" : "primary"}
